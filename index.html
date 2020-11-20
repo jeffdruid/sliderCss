@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Slider_Css</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Deluxe</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section class="banner">
+        <div class="imgBx">
+            <img src="/iphone.jfif" class="active">
+            <img src="/kettle.jfif">
+            <img src="/shoe.jfif">
+            <img src="/watch.jfif">
+        </div>
+
+        <div class="contentBx">
+            <div class="active">
+                <h2>iFone</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div>
+                <h2>iKettle</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div>
+                <h2>iShoe</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div>
+                <h2>iWatch</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit!?</p>
+                <a href="#">Buy Now</a>
+            </div>
+        </div>
+
+
+        <ul class="controls">
+            <li onclick="previousSlide();previousSlideText();"></li>
+            <li onclick="nextSlide();nextSlideText();"></li>
+        </ul>
+        
+    </section>
+
+    <script type="text/javascript">
+        const imgBx = document.querySelector('.imgBx');
+        const slides = imgBx.getElementsByTagName('img');
+        var i = 0;
+
+        function nextSlide(){
+            slides[i].classList.remove('active');
+            i = (i+1) % slides.length;
+            slides[i].classList.add('active');
+        }
+
+        function previousSlide(){
+            slides[i].classList.remove('active');
+            i = (i-1 + slides.length) % slides.length;
+            slides[i].classList.add('active');
+        }
+
+
+
+
+
+
+        const contentBx = document.querySelector('.contentBx');
+        const slidesText = contentBx.getElementsByTagName('div');
+        var j = 0;
+
+        function nextSlideText(){
+            slidesText[j].classList.remove('active');
+            j = (j+1) % slidesText.length;
+            slidesText[j].classList.add('active');
+        }
+
+        function previousSlideText(){
+            slidesText[j].classList.remove('active');
+            j = (j-1 + slidesText.length) % slidesText.length;
+            slidesText[j].classList.add('active');
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
